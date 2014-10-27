@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Menu Angular</title>
+	<!--<link rel="stylesheet" href="style.css">-->
+	
+</head>
+<body ng-controller="alumnosCtrl as als">
+
+<div ng-repeat="alumno in alumnos | orderBy:'nombre'" ng-cloak>
+	
+	{{alumno.nombre}} - {{alumno.telefono}}<br>
+	<b ng-cloak>{{alumno.curso}}</b><br>
+</div>
+<button ng-hide="formVisibiity" type="button" ng-click="visibility()">Add</button>
+<div ng-show="formVisibiity">
+	<input type="text" ng-model="na.nombre" placeholder="Nombre"><br>
+	<input type="text" ng-model="na.telefono" placeholder="Telefono"><br>
+	<input type="text" ng-model="na.curso" placeholder="Curso"><br>
+	<button type="button" ng-click="Save()">Guardar</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.26/angular-route.min.js"></script>
+	<script src="app.js"></script>
+<script src="controllers/alumnosCtrl.js"></script>
+
+</body>
+</html>
